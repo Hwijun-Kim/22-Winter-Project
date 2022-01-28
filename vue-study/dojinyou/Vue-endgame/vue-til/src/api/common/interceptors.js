@@ -26,5 +26,6 @@ export function setInterceptors(instance) {
       return Promise.reject(error);
     },
   );
+
   return instance;
 }

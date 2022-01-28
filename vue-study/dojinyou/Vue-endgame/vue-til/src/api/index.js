@@ -21,8 +21,8 @@ function loginUser(userData) {
 }
 
 // 학습 노트 데이터를 조회 하는 api
-function patchPosts() {
+function fetchPosts() {
   return instance.get('posts');
 }
 
-export { registerUser, loginUser, patchPosts };
+export { registerUser, loginUser, fetchPosts };
