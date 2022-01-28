@@ -1,12 +1,14 @@
 <template>
   <header>
     <div>
-      <router-link to="/" class="logo">TIL</router-link>
+      <router-link to="/" class="logo">
+        TIL
+        <span v-if="isLogin" class="username">by {{ getUsername }}</span>
+      </router-link>
     </div>
     <div class="navigations">
       <template v-if="isLogin">
-        <span class="username">{{ getUsername }}</span>
-        <a href="javascript:;" @click="logoutUser">Logout</a>
+        <a href="javascript:;" @click="logoutUser" class="logout-btn">Logout</a>
       </template>
       <template v-else>
         <router-link to="/login">로그인</router-link>
@@ -29,13 +31,16 @@ export default {
   methods: {
     logoutUser() {
       this.$store.commit('clearUsername');
-      this.$router.push('/login');
+      this.$router.push('/login ');
     },
   },
 };
 </script>
 
 <style scoped>
+.logout-btn {
+  font-size: 14px;
+}
 .username {
   color: white;
 }
