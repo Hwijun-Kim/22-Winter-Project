@@ -52,12 +52,11 @@ export default {
         };
         const { data } = await loginUser(userData);
         // vuex state 저장
+        this.$store.commit('setToken', data.token);
         this.$store.commit('setUsername', data.user.username);
-        // this.logMessage = `${data.user.username} 님 환영합니다`;
         // router 이용(js)
         this.$router.push('/main');
       } catch (error) {
-        // console.error(error);
         this.logMessage = error.response.data;
       } finally {
         this.initForm();

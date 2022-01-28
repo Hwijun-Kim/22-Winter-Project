@@ -19,19 +19,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   computed: {
-    isLogin() {
-      return this.$store.getters.isLogin;
-    },
-    getUsername() {
-      return this.$store.state.username;
-    },
+    ...mapGetters(['isLogin', 'getUsername']),
   },
   methods: {
     logoutUser() {
+      this.$store.commit('clearToken');
       this.$store.commit('clearUsername');
-      this.$router.push('/login ');
+      this.$router.push('/login');
     },
   },
 };
