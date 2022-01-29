@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { loginUser } from '@/api/index';
+import { loginUser } from '@/api/auth';
 import {
   getAuthFromCookie,
   getUserFromCookie,
