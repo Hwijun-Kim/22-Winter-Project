@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validate';
 
 export default {
@@ -50,10 +49,7 @@ export default {
           username: this.username,
           password: this.password,
         };
-        const { data } = await loginUser(userData);
-        // vuex state 저장
-        this.$store.commit('setToken', data.token);
-        this.$store.commit('setUsername', data.user.username);
+        await this.$store.dispatch('LOGIN', userData);
         // router 이용(js)
         this.$router.push('/main');
       } catch (error) {
