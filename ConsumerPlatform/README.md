@@ -1,4 +1,24 @@
-# 2021 Winter Project - Web Clent Server
+# consumerplatform
 
-## 개발 주제
-음원 소비 플랫폼의 웹 클라이언트 서버 개발
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
